@@ -10,7 +10,7 @@
    <proxy>
       <active>true</active>
       <protocol>http</protocol>
-      <host>proxy.indra.es</host>
+      <host>proxy.company.com</host>
       <port>8080</port>
       <username>XXXX</username>
       <password>XXXX</password>
