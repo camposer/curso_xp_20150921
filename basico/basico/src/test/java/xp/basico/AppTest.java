@@ -1,38 +1,29 @@
 package xp.basico;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class AppTest {
+	
+	@Before
+	public void before() {
+		System.out.println("Antes");
+	}
+	
+	@Test
+	public void sumar() {
+		Assert.assertEquals(4, 2 + 2);
+	}
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+	@Test
+	public void restar() {
+		Assert.assertEquals(1, 3 - 2);
+	}
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	@After
+	public void after() {
+		System.out.println("Después");
+	}
 }
