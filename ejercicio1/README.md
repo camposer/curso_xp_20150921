@@ -16,3 +16,6 @@ int c = calc.restar(2, 2);
 int d = calc.dividir(a, c);
 ```
 
+IMPORTANTE:
+- Programar en pares
+- Programar primero la prueba y luego la implementación
