@@ -1,0 +1,60 @@
+	Cómo configurar el proyecto
+	===========================
+
+	De la siguiente URL: http://172.22.174.85/tools
+
+	- Descargar Derby y descomprimir
+	- Descargar Apache Tomcat y descomprimir
+
+	Derby
+	-----
+
+	Ejecutar el siguiente fichero:
+		C:\DERBY_HOME\bin\startNetworkServer.bat
+
+	# Configurar cliente Derby
+
+	En Eclipse, abrir la perspectiva "Database development"
+	- Clic derecho sobre conexiones (Add new connection)
+	- Derby -> Derby Client (última versión)
+	- Agregar driver y seleccionar el JAR correcto
+		- Eliminar el driver preconfigurado (derbyclient.jar)
+		- Especificar el driver adecuado C:\DERBY_HOME\lib\derbyclient.jar
+	- Especificar datos de conexión
+		Database: xperience
+		User: user
+		Password 123 (save password)
+	
+		TEST!
+		CONNECT!
+	- Clic derecho sobre la conexión (Open SQL Scrapbook)
+		CREATE TABLE test (nombre VARCHAR(20));
+		INSERT INTO test VALUES('hola');
+		INSERT INTO test VALUES('hola');	
+		INSERT INTO test VALUES('hola');
+		SELECT * FROM test;
+
+	NOTA: Para ejecutar debe seleccionar las líneas deseadas, clic derecho: Execute selected text
+
+	Proyecto
+	--------
+
+	En Eclipse, Perspectiva Java EE, vista Servers
+	- Create new server
+	- Agregar un nuevo Apache Tomcat 8 y especificar la carpeta donde se fue descomprimido
+	
+	# Importar el proyecto
+
+	En el menú contextual: File -> Import -> Existing Maven Project
+	- Indicar el POM de nuestro proyecto
+
+
+
+
+	
+
+
+
+
+
+
