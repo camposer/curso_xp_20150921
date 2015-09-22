@@ -2,18 +2,22 @@ package service;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import config.BeanConfig;
 import exception.DivisorInvalidoException;
 import exception.NaturalInvalidoException;
 import exception.ResultadoInvalidoException;
 import exception.SustraendoInvalidoException;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = BeanConfig.class)
 public class CalculadoraServiceTest {
+	@Autowired
 	private CalculadoraService calculadoraService;
-	
-	public CalculadoraServiceTest() {
-		calculadoraService = CalculadoraServiceFactory.createCalculadoraService();
-	}
 	
 	@Test
 	public void sumar() {

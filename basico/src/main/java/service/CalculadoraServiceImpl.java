@@ -1,10 +1,13 @@
 package service;
 
+import org.springframework.stereotype.Service;
+
 import exception.DivisorInvalidoException;
 import exception.NaturalInvalidoException;
 import exception.ResultadoInvalidoException;
 import exception.SustraendoInvalidoException;
 
+@Service
 public class CalculadoraServiceImpl implements CalculadoraService {
 
 	@Override
