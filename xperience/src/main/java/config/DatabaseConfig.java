@@ -1,12 +1,17 @@
 package config;
 
 import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -27,6 +32,14 @@ public class DatabaseConfig {
     private String dbPassword;
 
     @Bean
+    @Profile("test")
+    public DataSource dataSourceTest() {
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+        return builder.setType(EmbeddedDatabaseType.HSQL).build();
+    }
+
+    @Bean
+    @Profile("prod")
     public DriverManagerDataSource dataSource() {
             DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
             driverManagerDataSource.setDriverClassName(dbDriverClassName);
@@ -36,26 +49,27 @@ public class DatabaseConfig {
             return driverManagerDataSource;
     }
 
+    @Autowired
 	@Bean
-	public EntityManagerFactory entityManagerFactory() {
-
+	public EntityManagerFactory entityManagerFactory(DataSource dataSource) {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		vendorAdapter.setGenerateDdl(true);
 
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
 		factory.setPackagesToScan("model");
-		factory.setDataSource(dataSource());
+		factory.setDataSource(dataSource);
 		factory.afterPropertiesSet();
 
 		return factory.getObject();
 	}
 
+    @Autowired
 	@Bean
-	public PlatformTransactionManager transactionManager() {
+	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 
 		JpaTransactionManager txManager = new JpaTransactionManager();
-		txManager.setEntityManagerFactory(entityManagerFactory());
+		txManager.setEntityManagerFactory(entityManagerFactory);
 		return txManager;
 	}
 }
