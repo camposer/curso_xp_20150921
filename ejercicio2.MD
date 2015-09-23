@@ -29,4 +29,4 @@ Escribir las historias de usuario correspondientes con sus criterios de aceptaci
 - PowerPoint, o
 - Pencil, o
 - Balsamiq, o
-- Glimpsy
+- Gliffy
