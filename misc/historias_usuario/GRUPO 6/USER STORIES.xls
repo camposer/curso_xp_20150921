@@ -1,0 +1,8 @@
+TAREA	RESULTADO ESPERADO		CRITERIOS DE ACEPTACION	
+Una vez listadas las historias, seleccionamos una y listadas sus actividades. Selecionaremos una de estas para editar.	Se abrira una ventana con la informacion editable de la actividad.		Dado el listado de actividades tendra que existir un boton editar. Cuando el usuario haga click se  abrira la ventana de modificacion.	GRUPO 7
+Una vez editemos lo que queramos damos a guardar	Volver al listado de actividades con la modificacion hecha		Dada la pantalla de modificacion, se mostraran los campos modificables. (DEFINIDOS EN PDF).	GRUPO 5
+no queremos al final hacer nada, cancelamos	Volver al listado de actividades sin ninguna modificacion.		Dada la pantalla de modificacion, tendremos un link al detalle de la historia de usuario. (Sera junto al titulo)	
+			Dada la pantalla de modificacion, se mostrara un combo con los usuarios. Hace falta tabla de usuarios.	
+			Tendremos que realizar validacion de los datos según se cambian. (las mismas que en CREAR)	GRUPO 5
+			Si usuario hace click en el boton modificar, entonces se actualiza la BD.	
+			Si usuario hace click en el Boton cancelar, entonces vuelve a la pantalla anterior sin cambios.	

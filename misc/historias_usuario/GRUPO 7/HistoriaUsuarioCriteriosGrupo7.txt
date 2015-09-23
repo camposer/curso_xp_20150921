@@ -1,0 +1,21 @@
+Listar Actividades. 
+
+	Como usuario, quiero listar el avance de las Actividades de cada Historia de Usuario.
+
+Criterios:
+
+	Mostrar la Actividades de cada Historia de Usuario.
+	
+	Mostrar la asignación y su estado de cada Actividad.
+
+	Dar la posibilidad de consultar el detalle de cada Actividad.
+
+
+
+
+
+
+
+
+
+ 

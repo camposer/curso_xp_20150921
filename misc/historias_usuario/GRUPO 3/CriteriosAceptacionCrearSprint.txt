@@ -1,0 +1,20 @@
+Criterio de aceptacion
+
+Dada la aplicacion xperience 
+cuando el usuario haga click en el boton nuevo sprint 
+entonces la ventana creación sprint aparece
+
+Dada la ventana creación sprint 
+cuando la ventana se cargue 
+entonces se muestra
+	un formulario con los siguientes campos a rellenar: Nombre, Fecha Inicio, Fecha fin
+	y la lista de historias de usuario del backlog
+
+Dada la ventana creación spring 
+cuando se incluye un nombre, una fecha de inicio y una fecha de fin y se selecciona al menos una historia de usuario
+entonces se habilita en botón de Crear Sprint
+
+Dada la ventana creación spring 
+cuando se incluye un nombre, una fecha de inicio y una fecha de fin y se selecciona al menos una historia de usuario
+y el usuario pulsa en el boton de Crear Sprint
+entonces se crea el Sprint (hablar con los de listar sprints para ver si se realiza la busqueda de sprints tras dar de alta)

@@ -1,0 +1,8 @@
+
+CRITERIOS DE ACEPTACION
+=======================
+
+- Aparecen la información del sprint (título y fechas)
+- Listado de historias
+- Haciendo doble-click en una historia se consulta
+- Hay un botón para añadir nuevas historias.

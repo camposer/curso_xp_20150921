@@ -1,0 +1,6 @@
+
+HISTORIA DE USUARIO
+===================
+
+El usuario ve el título del sprint, sus fechas y una lista con las historias de usuario del sprint. Las identifica por el título y como información adicional ve la prioridad y el esfuerzo. Cuando hace doble-click en una historia, la puede consultar.
+Cuando pulsa en el botón de añadir se le muestra el listado de historias para añadir nuevas.

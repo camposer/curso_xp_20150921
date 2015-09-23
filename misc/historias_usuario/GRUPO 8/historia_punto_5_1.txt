@@ -1,0 +1,11 @@
+Ordenar historias de usuario en el sprint
+
+Como usuario quiero ordenar el listado de historias de usuario de sprint para tener las historias ordenadas por valor
+
+Prioridad:
+Esfuerzo: 
+
+
+Criterios de aceptación:
+
+Dado la pantalla de  listado de historias del sprint el usuario puede arrastrar una historia a otro punto de la lista para reordenar.
