@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -17,34 +18,39 @@ public class HistoriaUsuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(unique=true, nullable=false)
-	private int id;
+	private Integer id;
 
-	@Column(nullable=false, length=1000)
 	private String descripcion;
 
 	private Integer esfuerzo;
 
-	@Column(nullable=false)
-	private Short estatus;
+	private Integer estatus;
 
 	@Temporal(TemporalType.DATE)
-	@Column(nullable=false)
 	private Date fecha;
 
 	private Integer prioridad;
 
-	@Column(nullable=false, length=250)
 	private String titulo;
+	
+	private Integer orden;
+
+	//bi-directional many-to-many association to Sprint
+//	@ManyToMany(mappedBy="historiaUsuarios")
+//	private List<Sprint> sprints;
+
+	//bi-directional many-to-one association to SprintHistoriaUsuarioRel
+	@OneToMany(mappedBy="historiaUsuario")
+	private List<SprintHistoriaUsuarioRel> sprintHistoriaUsuarioRels;
 
 	public HistoriaUsuario() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -64,12 +70,12 @@ public class HistoriaUsuario implements Serializable {
 		this.esfuerzo = esfuerzo;
 	}
 
-	public Short getEstatus() {
+	public Integer getEstatus() {
 		return this.estatus;
 	}
 
-	public void setEstatus(Short estatus) {
-		this.estatus = estatus;
+	public void setEstatus(Integer s) {
+		this.estatus = s;
 	}
 
 	public Date getFecha() {
@@ -95,5 +101,45 @@ public class HistoriaUsuario implements Serializable {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+
+//	public List<Sprint> getSprints() {
+//		return this.sprints;
+//	}
+//
+//	public void setSprints(List<Sprint> sprints) {
+//		this.sprints = sprints;
+//	}
+
+	public List<SprintHistoriaUsuarioRel> getSprintHistoriaUsuarioRels() {
+		return this.sprintHistoriaUsuarioRels;
+	}
+
+	public void setSprintHistoriaUsuarioRels(List<SprintHistoriaUsuarioRel> sprintHistoriaUsuarioRels) {
+		this.sprintHistoriaUsuarioRels = sprintHistoriaUsuarioRels;
+	}
+
+	public SprintHistoriaUsuarioRel addSprintHistoriaUsuarioRel(SprintHistoriaUsuarioRel sprintHistoriaUsuarioRel) {
+		getSprintHistoriaUsuarioRels().add(sprintHistoriaUsuarioRel);
+		sprintHistoriaUsuarioRel.setHistoriaUsuario(this);
+
+		return sprintHistoriaUsuarioRel;
+	}
+
+	public SprintHistoriaUsuarioRel removeSprintHistoriaUsuarioRel(SprintHistoriaUsuarioRel sprintHistoriaUsuarioRel) {
+		getSprintHistoriaUsuarioRels().remove(sprintHistoriaUsuarioRel);
+		sprintHistoriaUsuarioRel.setHistoriaUsuario(null);
+
+		return sprintHistoriaUsuarioRel;
+	}
+
+	public Integer getOrden() {
+		return orden;
+	}
+
+	public void setOrden(Integer orden) {
+		this.orden = orden;
+	}
+	
+	
 
 }

@@ -19,10 +19,10 @@ public class HistoriaUsuarioServiceTest extends ServiceTest {
 	@Test
 	public void obtenerHistoriasUsuario() {
 		HistoriaUsuario hu = new HistoriaUsuario();
-		hu.setTitulo("titulo x");
+		hu.setTitulo("titulo x prueba");     
 		hu.setDescripcion("descripcion x");
 		hu.setFecha(new Date());
-		hu.setEstatus((short)0);
+		hu.setEstatus(0);
 		
 		historiaUsuarioRepository.save(hu);
 		

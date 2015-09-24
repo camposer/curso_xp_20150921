@@ -1,5 +1,7 @@
 package config;
 
+import java.util.Map;
+
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -54,6 +56,9 @@ public class DatabaseConfig {
 	public EntityManagerFactory entityManagerFactory(DataSource dataSource) {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		vendorAdapter.setGenerateDdl(true);
+		vendorAdapter.setShowSql(true);
+		Map<String, Object> props = vendorAdapter.getJpaPropertyMap();
+		for(String key: props.keySet()) System.out.println(key+": "+props.get(key));
 
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);

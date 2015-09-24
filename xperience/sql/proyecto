@@ -1,0 +1,19 @@
+CREATE TABLE proyecto(
+	id INTEGER NOT NULL
+		GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	titulo VARCHAR(250) NOT NULL,
+	descripcion VARCHAR(1000) NOT NULL,
+	jefe_proyecto VARCHAR(250) NOT NULL,
+	fecha_inicio DATE,
+	fecha_fin DATE,
+	estatus int not null,
+	PRIMARY KEY(id)
+);
+
+INSERT INTO proyecto(titulo, descripcion, jefe_proyecto, fecha_inicio, fecha_fin, estatus)
+VALUES('titulo 1', 'descripcion 1', 'Jefe 1', current_date, current_date, 0);
+INSERT INTO proyecto(titulo, descripcion, jefe_proyecto, fecha_inicio, fecha_fin, estatus)
+VALUES('titulo 2', 'descripcion 2', 'Jefe 2', current_date, current_date, 0);
+INSERT INTO proyecto(titulo, descripcion, jefe_proyecto, fecha_inicio, fecha_fin, estatus)
+VALUES('titulo 3', 'descripcion 3', 'Jefe 3', current_date, current_date, 0);
+

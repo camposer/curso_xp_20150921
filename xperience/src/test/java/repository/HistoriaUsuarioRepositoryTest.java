@@ -29,7 +29,7 @@ public class HistoriaUsuarioRepositoryTest {
 		hu.setTitulo("titulo x");
 		hu.setDescripcion("descripcion x");
 		hu.setFecha(new Date());
-		hu.setEstatus((short)0);
+		hu.setEstatus(0);
 		
 		historiaUsuarioRepository.save(hu);
 		

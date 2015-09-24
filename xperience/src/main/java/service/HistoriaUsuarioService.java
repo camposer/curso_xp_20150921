@@ -7,5 +7,9 @@ import model.HistoriaUsuario;
 public interface HistoriaUsuarioService {
 
 	List<HistoriaUsuario> obtenerHistoriasUsuario();
+	
+	List<HistoriaUsuario> obtenerListadoOrdenadoHistoriasUsuario();
+	
+	List<HistoriaUsuario> cambiarOrdenHistoriasUsuario(int ordenAnt, int OrderNuevo);
 
 }
